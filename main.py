@@ -1,6 +1,12 @@
 import tkinter
 
 
+def calculate():
+    miles = int(miles_label.get())
+    km = round(miles * 1.609)
+    km_label.config(text=km)
+
+
 window = tkinter.Tk()
 window.minsize(500, 400)
 window.maxsize(500, 400)
@@ -19,7 +25,7 @@ km_label.grid(column=1, row=1, padx=30, pady=10)
 miles_label = tkinter.Entry(text=0, font=("Arial", 20, "normal"), width=10)
 miles_label.grid(column=1, row=0, padx=30, pady=10)
 
-button = tkinter.Button(text="Calculate", font=("Arial", 20, "normal"), width=10)
+button = tkinter.Button(text="Calculate", font=("Arial", 20, "normal"), width=10, command=calculate)
 button.grid(column=1, row=2, padx=30, pady=10)
 
 text_miles_label = tkinter.Label(text="Miles", font=("Arial", 20, "normal"))
